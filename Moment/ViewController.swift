@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func startAction(_ sender: Any) {
+    
     performSegue(withIdentifier: "timer", sender: self)
         
     }
@@ -40,6 +41,9 @@ class ViewController: UIViewController {
         vc.timeInput = Int(timeMed)
     }
     
+    @IBAction func SavedAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "segueSaved", sender: self)
+    }
     
 }
 

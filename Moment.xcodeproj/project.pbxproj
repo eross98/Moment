@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20430F9B24D67756008C99A8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20430F9924D67756008C99A8 /* Entry+CoreDataClass.swift */; };
+		20430F9C24D67756008C99A8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20430F9A24D67756008C99A8 /* Entry+CoreDataProperties.swift */; };
+		20430FA024D67904008C99A8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20430F9F24D67904008C99A8 /* TableViewController.swift */; };
 		204607ED24D642FC00DB7422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204607EC24D642FC00DB7422 /* AppDelegate.swift */; };
 		204607EF24D642FC00DB7422 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204607EE24D642FC00DB7422 /* SceneDelegate.swift */; };
 		204607F124D642FC00DB7422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204607F024D642FC00DB7422 /* ViewController.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20430F9924D67756008C99A8 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		20430F9A24D67756008C99A8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		20430F9F24D67904008C99A8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		204607E924D642FC00DB7422 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		204607EC24D642FC00DB7422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		204607EE24D642FC00DB7422 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +88,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20430F9D24D67768008C99A8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				20430F9924D67756008C99A8 /* Entry+CoreDataClass.swift */,
+				20430F9A24D67756008C99A8 /* Entry+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		20430F9E24D677A1008C99A8 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				2046082124D651D800DB7422 /* audio1.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		204607E024D642FC00DB7422 = {
 			isa = PBXGroup;
 			children = (
@@ -105,15 +128,17 @@
 		204607EB24D642FC00DB7422 /* Moment */ = {
 			isa = PBXGroup;
 			children = (
+				20430F9E24D677A1008C99A8 /* Audio */,
+				20430F9D24D67768008C99A8 /* CoreData */,
 				204607EC24D642FC00DB7422 /* AppDelegate.swift */,
 				204607EE24D642FC00DB7422 /* SceneDelegate.swift */,
 				204607F024D642FC00DB7422 /* ViewController.swift */,
 				204607F224D642FC00DB7422 /* Main.storyboard */,
 				2046081F24D6499300DB7422 /* ViewControllerTimer.swift */,
-				204607F824D6430000DB7422 /* Assets.xcassets */,
+				20430F9F24D67904008C99A8 /* TableViewController.swift */,
 				204607FA24D6430000DB7422 /* LaunchScreen.storyboard */,
+				204607F824D6430000DB7422 /* Assets.xcassets */,
 				204607FD24D6430000DB7422 /* Info.plist */,
-				2046082124D651D800DB7422 /* audio1.mp3 */,
 				204607F524D642FC00DB7422 /* Moment.xcdatamodeld */,
 			);
 			path = Moment;
@@ -270,9 +295,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				204607F124D642FC00DB7422 /* ViewController.swift in Sources */,
+				20430F9C24D67756008C99A8 /* Entry+CoreDataProperties.swift in Sources */,
 				204607ED24D642FC00DB7422 /* AppDelegate.swift in Sources */,
+				20430FA024D67904008C99A8 /* TableViewController.swift in Sources */,
 				204607EF24D642FC00DB7422 /* SceneDelegate.swift in Sources */,
 				204607F724D642FC00DB7422 /* Moment.xcdatamodeld in Sources */,
+				20430F9B24D67756008C99A8 /* Entry+CoreDataClass.swift in Sources */,
 				2046082024D6499300DB7422 /* ViewControllerTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S8UQCK6J96;
 				INFOPLIST_FILE = Moment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S8UQCK6J96;
 				INFOPLIST_FILE = Moment/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
