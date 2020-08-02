@@ -16,6 +16,8 @@
 		204607FC24D6430000DB7422 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204607FA24D6430000DB7422 /* LaunchScreen.storyboard */; };
 		2046080724D6430000DB7422 /* MomentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046080624D6430000DB7422 /* MomentTests.swift */; };
 		2046081224D6430000DB7422 /* MomentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046081124D6430000DB7422 /* MomentUITests.swift */; };
+		2046082024D6499300DB7422 /* ViewControllerTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046081F24D6499300DB7422 /* ViewControllerTimer.swift */; };
+		2046082224D651D800DB7422 /* audio1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2046082124D651D800DB7422 /* audio1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		2046080D24D6430000DB7422 /* MomentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MomentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2046081124D6430000DB7422 /* MomentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomentUITests.swift; sourceTree = "<group>"; };
 		2046081324D6430000DB7422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2046081F24D6499300DB7422 /* ViewControllerTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTimer.swift; sourceTree = "<group>"; };
+		2046082124D651D800DB7422 /* audio1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +109,11 @@
 				204607EE24D642FC00DB7422 /* SceneDelegate.swift */,
 				204607F024D642FC00DB7422 /* ViewController.swift */,
 				204607F224D642FC00DB7422 /* Main.storyboard */,
+				2046081F24D6499300DB7422 /* ViewControllerTimer.swift */,
 				204607F824D6430000DB7422 /* Assets.xcassets */,
 				204607FA24D6430000DB7422 /* LaunchScreen.storyboard */,
 				204607FD24D6430000DB7422 /* Info.plist */,
+				2046082124D651D800DB7422 /* audio1.mp3 */,
 				204607F524D642FC00DB7422 /* Moment.xcdatamodeld */,
 			);
 			path = Moment;
@@ -238,6 +244,7 @@
 				204607FC24D6430000DB7422 /* LaunchScreen.storyboard in Resources */,
 				204607F924D6430000DB7422 /* Assets.xcassets in Resources */,
 				204607F424D642FC00DB7422 /* Main.storyboard in Resources */,
+				2046082224D651D800DB7422 /* audio1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +273,7 @@
 				204607ED24D642FC00DB7422 /* AppDelegate.swift in Sources */,
 				204607EF24D642FC00DB7422 /* SceneDelegate.swift in Sources */,
 				204607F724D642FC00DB7422 /* Moment.xcdatamodeld in Sources */,
+				2046082024D6499300DB7422 /* ViewControllerTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
