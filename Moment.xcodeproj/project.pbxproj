@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		20430F9B24D67756008C99A8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20430F9924D67756008C99A8 /* Entry+CoreDataClass.swift */; };
 		20430F9C24D67756008C99A8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20430F9A24D67756008C99A8 /* Entry+CoreDataProperties.swift */; };
-		20430FA024D67904008C99A8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20430F9F24D67904008C99A8 /* TableViewController.swift */; };
 		204607ED24D642FC00DB7422 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204607EC24D642FC00DB7422 /* AppDelegate.swift */; };
 		204607EF24D642FC00DB7422 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204607EE24D642FC00DB7422 /* SceneDelegate.swift */; };
 		204607F124D642FC00DB7422 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204607F024D642FC00DB7422 /* ViewController.swift */; };
@@ -21,6 +20,8 @@
 		2046081224D6430000DB7422 /* MomentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046081124D6430000DB7422 /* MomentUITests.swift */; };
 		2046082024D6499300DB7422 /* ViewControllerTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046081F24D6499300DB7422 /* ViewControllerTimer.swift */; };
 		2046082224D651D800DB7422 /* audio1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2046082124D651D800DB7422 /* audio1.mp3 */; };
+		20DD319824DC9B7900608854 /* SavedEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DD319724DC9B7900608854 /* SavedEntriesViewController.swift */; };
+		20DD319A24DCA11E00608854 /* ShowDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DD319924DCA11E00608854 /* ShowDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,6 @@
 /* Begin PBXFileReference section */
 		20430F9924D67756008C99A8 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		20430F9A24D67756008C99A8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		20430F9F24D67904008C99A8 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		204607E924D642FC00DB7422 /* Moment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		204607EC24D642FC00DB7422 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		204607EE24D642FC00DB7422 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +61,8 @@
 		2046081324D6430000DB7422 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2046081F24D6499300DB7422 /* ViewControllerTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTimer.swift; sourceTree = "<group>"; };
 		2046082124D651D800DB7422 /* audio1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio1.mp3; sourceTree = "<group>"; };
+		20DD319724DC9B7900608854 /* SavedEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEntriesViewController.swift; sourceTree = "<group>"; };
+		20DD319924DCA11E00608854 /* ShowDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +130,11 @@
 		204607EB24D642FC00DB7422 /* Moment */ = {
 			isa = PBXGroup;
 			children = (
-				20430F9E24D677A1008C99A8 /* Audio */,
 				20430F9D24D67768008C99A8 /* CoreData */,
+				20DD319B24DCA12A00608854 /* Swift Files */,
+				20430F9E24D677A1008C99A8 /* Audio */,
 				204607EC24D642FC00DB7422 /* AppDelegate.swift */,
 				204607EE24D642FC00DB7422 /* SceneDelegate.swift */,
-				204607F024D642FC00DB7422 /* ViewController.swift */,
-				204607F224D642FC00DB7422 /* Main.storyboard */,
-				2046081F24D6499300DB7422 /* ViewControllerTimer.swift */,
-				20430F9F24D67904008C99A8 /* TableViewController.swift */,
 				204607FA24D6430000DB7422 /* LaunchScreen.storyboard */,
 				204607F824D6430000DB7422 /* Assets.xcassets */,
 				204607FD24D6430000DB7422 /* Info.plist */,
@@ -160,6 +159,18 @@
 				2046081324D6430000DB7422 /* Info.plist */,
 			);
 			path = MomentUITests;
+			sourceTree = "<group>";
+		};
+		20DD319B24DCA12A00608854 /* Swift Files */ = {
+			isa = PBXGroup;
+			children = (
+				204607F024D642FC00DB7422 /* ViewController.swift */,
+				2046081F24D6499300DB7422 /* ViewControllerTimer.swift */,
+				20DD319724DC9B7900608854 /* SavedEntriesViewController.swift */,
+				20DD319924DCA11E00608854 /* ShowDataViewController.swift */,
+				204607F224D642FC00DB7422 /* Main.storyboard */,
+			);
+			path = "Swift Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,11 +307,12 @@
 			files = (
 				204607F124D642FC00DB7422 /* ViewController.swift in Sources */,
 				20430F9C24D67756008C99A8 /* Entry+CoreDataProperties.swift in Sources */,
+				20DD319824DC9B7900608854 /* SavedEntriesViewController.swift in Sources */,
 				204607ED24D642FC00DB7422 /* AppDelegate.swift in Sources */,
-				20430FA024D67904008C99A8 /* TableViewController.swift in Sources */,
 				204607EF24D642FC00DB7422 /* SceneDelegate.swift in Sources */,
 				204607F724D642FC00DB7422 /* Moment.xcdatamodeld in Sources */,
 				20430F9B24D67756008C99A8 /* Entry+CoreDataClass.swift in Sources */,
+				20DD319A24DCA11E00608854 /* ShowDataViewController.swift in Sources */,
 				2046082024D6499300DB7422 /* ViewControllerTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,21 +28,28 @@ class ViewController: UIViewController {
     
     
     @IBAction func startAction(_ sender: Any) {
-    
     performSegue(withIdentifier: "timer", sender: self)
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        let vc = segue.destination as! ViewControllerTimer
-        vc.modalPresentationStyle = .fullScreen
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "timer"{
+            let vc = segue.destination as! ViewControllerTimer
+            vc.modalPresentationStyle = .fullScreen
         
-        //Add the song to play here for a future addition
-        vc.timeInput = Int(timeMed)
+            //Add the song to play here for a future addition
+            vc.timeInput = Int(timeMed)
+        }
+        else{
+            return
+        }
+       
     }
     
     @IBAction func SavedAction(_ sender: Any) {
-        self.performSegue(withIdentifier: "segueSaved", sender: self)
+        
+        performSegue(withIdentifier: "segueSaved", sender: self)
     }
     
 }
