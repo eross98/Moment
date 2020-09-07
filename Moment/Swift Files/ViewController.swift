@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import CoreData
+
 
 class ViewController: UIViewController {
 
     var timeMed = 10
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     
     @IBOutlet weak var timeMeditate: UILabel!
     @IBOutlet weak var sliderOutlet: UISlider!
@@ -20,10 +24,34 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    @IBAction func addButton(_ sender: Any) {
+        print("Added")
+        let newEntry = Entry(context: self.context)
+        newEntry.dayInt = 8
+        newEntry.dayString="Monday"
+        newEntry.month = 7
+        newEntry.time = 15
+        newEntry.year = 2020
+        
+        do{
+            try self.context.save()
+        }
+        catch{
+            print("Error in saving to CoreData")
+        }
+    }
+    
+    
 
     @IBAction func sliderAction(_ sender: UISlider) {
         timeMed = Int(sender.value)
-        timeMeditate.text = String(timeMed) + " Minutes"
+        if timeMed == 1{
+            timeMeditate.text = String(timeMed) + " Minute"
+        }
+        else {
+            timeMeditate.text = String(timeMed) + " Minutes"
+        }
     }
     
     

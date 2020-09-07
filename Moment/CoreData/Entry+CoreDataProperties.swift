@@ -16,17 +16,7 @@ extension Entry {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Entry> {
         return NSFetchRequest<Entry>(entityName: "Entry")
     }
-    /*
-     init(month:Int64, dayInt:Int64, dayString:String, year:Int64, time:Int64)
-       {
-           self.month = month
-           self.dayInt = dayInt
-           self.dayString = dayString
-           self.year = year
-           self.time = time
-           
-       }
- */
+    
 
     @NSManaged public var month: Int64
     @NSManaged public var dayInt: Int64
