@@ -26,6 +26,7 @@ class SavedEntriesViewController: UIViewController, UITableViewDataSource, UITab
         do{
             try self.context.save()
             print("Added to the coreData")
+            
         }
         catch{
             print("Error in saving to CoreData")
@@ -41,30 +42,9 @@ class SavedEntriesViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         
-        tempThing()
-        }
-    func tableView(_ tableView: UITableView,
-               heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 70
-    }
-    
-    func tempThing()
-    {
-        let newEntry = Entry(context: self.context)
-        newEntry.dayInt = 8
-        newEntry.dayString="Monday"
-        newEntry.month = 7
-        newEntry.time = 15
-        newEntry.year = 2020
+        fetch()
         
-        do{
-            try self.context.save()
         }
-        catch{
-            print("Error in saving to CoreData")
-        }
-        self.fetch()
-    }
     
     func fetch()
     {
@@ -78,6 +58,7 @@ class SavedEntriesViewController: UIViewController, UITableViewDataSource, UITab
         catch{
             print("Error getting the objects form coredata")
         }
+        arrayEntries.reverse()
         
     }
     
@@ -92,5 +73,28 @@ class SavedEntriesViewController: UIViewController, UITableViewDataSource, UITab
         cell.setCell(entry: temp)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+               heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return 70
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style:.destructive, title:"Remove"){ (action, view, MTLNewLibraryCompletionHandler)in
+            
+            let removeMe = self.arrayEntries[indexPath.row]
+            self.context.delete(removeMe)
+            do{
+                try self.context.save()
+            }
+            catch{
+                print("Error in removing the entry")
+            }
+            self.fetch()
+            
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+
     }
 }

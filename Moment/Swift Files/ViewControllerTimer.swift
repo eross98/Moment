@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 class ViewControllerTimer: UIViewController {
 
@@ -16,12 +17,21 @@ class ViewControllerTimer: UIViewController {
     @IBOutlet weak var endOutlet: UIButton!
     @IBOutlet weak var backgroundOutlet: UIImageView!
     
+      let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var timeInput:Int = 0
+    var audioTrack = 1
+    
     var minute:Int = 10
     var second:Int = 0
     var pauseBool:Bool = false
     var timer:Timer = Timer()
+    
+    var monthTemp = 0
+    var dayIntTemp = 0
+    var dayStringTemp = ""
+    var yearTemp = 0
+    
     
     var player:AVAudioPlayer?
     
@@ -30,13 +40,15 @@ class ViewControllerTimer: UIViewController {
         super.viewDidLoad()
 
         timeRemain.text = String(timeInput) + ":00"
-        minute = timeInput
+        minute = timeInput - 1
+        second = 59
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(secondTimer), userInfo: nil, repeats: true)
         
         startAudio()
     }
     
-    @IBAction func pauseAction(_ sender: Any) {
+    @IBAction func pauseAction(_ sender: UIButton) {
+        sender.pulsatesmall()
         pauseAudio()
         
         //Second time clicking so it will resume the timer and audio
@@ -61,11 +73,35 @@ class ViewControllerTimer: UIViewController {
         }
     }
     
-    @IBAction func endAction(_ sender: Any) {
+    @IBAction func endAction(_ sender: UIButton) {
+        sender.pulsatesmall()
         stopAudio()
+        getDate()
+        if self.minute == self.timeInput || self.timeInput == (self.minute + 1){
+            //They stopped the timer before a minute so dont bother trying to save
+            self.endMe()
+        }
         let alert = UIAlertController(title: "Do you want to save your current session", message: "", preferredStyle: .alert)
         let saveMe = UIAlertAction(title: "Save", style: .default){ (action) in
-            self.endMe()
+            let newEntry = Entry(context: self.context)
+            newEntry.dayInt = Int64(self.dayIntTemp)
+            newEntry.dayString=self.dayStringTemp
+            newEntry.month = Int64(self.monthTemp)
+            newEntry.year = Int64(self.yearTemp)
+            
+        if self.second == 0{
+            newEntry.time = Int64(self.timeInput - self.minute)
+        }else{
+            newEntry.time = Int64(self.timeInput - self.minute - 1)
+        }
+            
+        do{
+            try self.context.save()
+        }
+        catch{
+            print("Error in saving to CoreData")
+        }
+        self.endMe()
             
             //Enter the code to save the data to core data
         }
@@ -86,26 +122,38 @@ class ViewControllerTimer: UIViewController {
                 timeRemain.text = "0:00"
                 stopAudio()
                 timer.invalidate()
+                getDate()
+                saveMe()
                 endMe()
             }
+            
+            timeRemain.text = String(minute) + ":00"
             minute -= 1
             second = 59
+            
+
         }
         else //second is not zero
         {
+            
             var secondString = String(second)
             if(second < 10){
                 secondString = "0" + secondString
             }
-            second -= 1
-                
             timeRemain.text = String(minute) + ":" + secondString
+            second -= 1
         }
     }
     
     func startAudio()
     {
-        let songString = Bundle.main.path(forResource: "audio1", ofType: "mp3")
+        var songString = Bundle.main.path(forResource: "audio1", ofType: "mp3")
+        if audioTrack == 2{
+            songString = Bundle.main.path(forResource: "audio2", ofType: "mp3")
+        }
+        else if audioTrack == 3{
+            songString = Bundle.main.path(forResource: "audio3", ofType: "mp3")
+        }
         do{
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, policy: .longForm)
 
@@ -124,9 +172,7 @@ class ViewControllerTimer: UIViewController {
         catch{
             print("Error in getting the audio")
         }
-        
     }
-    
     
     func pauseAudio()
     {
@@ -140,11 +186,47 @@ class ViewControllerTimer: UIViewController {
         player!.stop()
     }
     
+    func saveMe()
+    {
+        let newEntry = Entry(context: self.context)
+        newEntry.dayInt = Int64(self.dayIntTemp)
+        newEntry.dayString=self.dayStringTemp
+        newEntry.month = Int64(self.monthTemp)
+        newEntry.year = Int64(self.yearTemp)
+        newEntry.time = Int64(self.timeInput)
+        do{
+            try self.context.save()
+        }
+        catch{
+            print("Error in saving to CoreData")
+        }
+    }
+    
     func endMe()
     {
-        //Not sure if stopAudio() is needed here
         backgroundOutlet.isHidden = true
         dismiss(animated: true, completion: nil)
     }
     
+    func getDate()
+    {
+        //var monthTemp = 0
+        //var dayStringTemp = ""
+        
+        let date=Date()
+        let dateFormatter = DateFormatter()
+        let calendar = Calendar.current
+        
+        let yearComponent = calendar.dateComponents([.year], from: date)
+        yearTemp = yearComponent.year!
+        
+        let monthComp = calendar.dateComponents([.month], from: date)
+        monthTemp = monthComp.month!
+        
+        let dayComp = calendar.dateComponents([.day], from: date)
+        dayIntTemp = dayComp.day!
+        
+        dateFormatter.dateFormat = "EEEE"
+        dayStringTemp = dateFormatter.string(from: date)
+    }
 }

@@ -21,6 +21,9 @@
 		2046082024D6499300DB7422 /* ViewControllerTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2046081F24D6499300DB7422 /* ViewControllerTimer.swift */; };
 		2046082224D651D800DB7422 /* audio1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2046082124D651D800DB7422 /* audio1.mp3 */; };
 		20C7DADE2505BF1B00E62D99 /* SavedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C7DADD2505BF1B00E62D99 /* SavedCell.swift */; };
+		20C7DAE12507048700E62D99 /* audio3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C7DADF2507048700E62D99 /* audio3.mp3 */; };
+		20C7DAE22507048700E62D99 /* audio2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C7DAE02507048700E62D99 /* audio2.mp3 */; };
+		20C7DAE42507089000E62D99 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C7DAE32507089000E62D99 /* UIButtonExtension.swift */; };
 		20DD319824DC9B7900608854 /* SavedEntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DD319724DC9B7900608854 /* SavedEntriesViewController.swift */; };
 		20DD319A24DCA11E00608854 /* ShowDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DD319924DCA11E00608854 /* ShowDataViewController.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +66,9 @@
 		2046081F24D6499300DB7422 /* ViewControllerTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTimer.swift; sourceTree = "<group>"; };
 		2046082124D651D800DB7422 /* audio1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio1.mp3; sourceTree = "<group>"; };
 		20C7DADD2505BF1B00E62D99 /* SavedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCell.swift; sourceTree = "<group>"; };
+		20C7DADF2507048700E62D99 /* audio3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio3.mp3; sourceTree = "<group>"; };
+		20C7DAE02507048700E62D99 /* audio2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audio2.mp3; sourceTree = "<group>"; };
+		20C7DAE32507089000E62D99 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		20DD319724DC9B7900608854 /* SavedEntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEntriesViewController.swift; sourceTree = "<group>"; };
 		20DD319924DCA11E00608854 /* ShowDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +110,8 @@
 		20430F9E24D677A1008C99A8 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				20C7DAE02507048700E62D99 /* audio2.mp3 */,
+				20C7DADF2507048700E62D99 /* audio3.mp3 */,
 				2046082124D651D800DB7422 /* audio1.mp3 */,
 			);
 			path = Audio;
@@ -172,6 +180,7 @@
 				20C7DADD2505BF1B00E62D99 /* SavedCell.swift */,
 				20DD319924DCA11E00608854 /* ShowDataViewController.swift */,
 				204607F224D642FC00DB7422 /* Main.storyboard */,
+				20C7DAE32507089000E62D99 /* UIButtonExtension.swift */,
 			);
 			path = "Swift Files";
 			sourceTree = "<group>";
@@ -282,7 +291,9 @@
 			files = (
 				204607FC24D6430000DB7422 /* LaunchScreen.storyboard in Resources */,
 				204607F924D6430000DB7422 /* Assets.xcassets in Resources */,
+				20C7DAE12507048700E62D99 /* audio3.mp3 in Resources */,
 				204607F424D642FC00DB7422 /* Main.storyboard in Resources */,
+				20C7DAE22507048700E62D99 /* audio2.mp3 in Resources */,
 				2046082224D651D800DB7422 /* audio1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				204607F124D642FC00DB7422 /* ViewController.swift in Sources */,
+				20C7DAE42507089000E62D99 /* UIButtonExtension.swift in Sources */,
 				20430F9C24D67756008C99A8 /* Entry+CoreDataProperties.swift in Sources */,
 				20DD319824DC9B7900608854 /* SavedEntriesViewController.swift in Sources */,
 				204607ED24D642FC00DB7422 /* AppDelegate.swift in Sources */,
