@@ -26,11 +26,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
-    
-    
     
 
     @IBAction func sliderAction(_ sender: UISlider) {
